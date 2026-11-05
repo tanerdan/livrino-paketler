@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Livrino — Yardım</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* Yardım / SSS (04.11.2026, kullanıcı onayı). 4 dil, çevrimdışı; dil: ?ui= > raftaki seçim (aicomics.ui) > cihaz > tr */
+:root { --bg: #F6F2EA; --surface: #FFFFFF; --ink: #15171A; --muted: #5E5A52; --line: #E2DCCF; --accent: #8C2F39; --accent-fg: #FFFFFF; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141416; --surface: #1D1D21; --ink: #ECE8DE; --muted: #A9A398; --line: #2E2D31; --accent: #C2525E; --accent-fg: #FFFFFF; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Work Sans", system-ui, sans-serif; font-size: 15.5px; line-height: 1.55; }
+header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 10px; padding: calc(env(safe-area-inset-top) + 10px) 16px 10px;
+  background: var(--bg); border-bottom: 1px solid var(--line); }
+header button { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 12px 6px; font: inherit; font-size: 18px; line-height: 1; }
+header h1 { margin: 0; font-family: "Bodoni Moda", Georgia, serif; font-size: 21px; font-weight: 600; flex: 1; }
+.seg { display: flex; gap: 2px; }
+.seg button { font-size: 12px; padding: 4px 8px; border-radius: 6px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+main { max-width: 680px; margin: 0 auto; padding: 8px 16px calc(env(safe-area-inset-bottom) + 32px); }
+h2 { font-family: "Bodoni Moda", Georgia, serif; font-size: 18px; margin: 24px 0 8px; color: var(--accent); }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; }
+summary { cursor: pointer; padding: 12px 14px; font-weight: 600; list-style: none; display: flex; gap: 8px; align-items: flex-start; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+"; color: var(--accent); font-weight: 700; width: 12px; flex: none; }
+details[open] summary::before { content: "–"; }
+.cevap { padding: 0 14px 12px 34px; }
+.cevap p { margin: 0 0 8px; }
+.cevap ul, .cevap ol { margin: 0 0 8px; padding-left: 20px; }
+a { color: var(--accent); }
+.alt { margin-top: 28px; font-size: 13.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <button id="geri" type="button">‹</button>
+  <h1 id="baslik">Yardım</h1>
+  <div class="seg" id="dil" role="group"></div>
+</header>
+<main id="icerik"></main>
+<script>
+(() => {
+  /* İçerik: claude/uretim-hatti-v3 §9.7; kaynak taslak Claude Docs "Livrino Yardım / SSS (TR taslak)". Fiyat yazılmaz (ülkeye göre değişir). */
+  const M = "destek@livrino.app";
+  const L = {
+    tr: { title: "Yardım ve SSS", back: "Kitap rafına dön", alt: "Sorunun burada yoksa bize yaz: ",
+      s: [
+        ["Okuma", [
+          ["Tam, B1 ve A2 ne demek?", "<p>Tam, kitabın tam metnidir: yazarın kendi cümleleri ya da bizim tam çevirimiz. B1 ve A2 aynı sahnelerin dil öğrenenler için sadeleştirilmiş hâlidir; A2 en kolayıdır. Okurken dili ve seviyeyi üstteki seçicilerden istediğin an değiştirebilirsin.</p>"],
+          ["Hangi dillerde okuyabilirim?", "<p>Kitaplar Türkçe, İngilizce, Almanca ve İspanyolca okunabilir. Her kitabın hangi dilde hangi seviyeleri olduğu kitap sayfasında yazar.</p>"],
+          ["İkili metin (+TR) nedir?", "<p>Alıştığın dilin cümlesini balonun altında küçük yazıyla gösterir. Öğrendiğin dilde okurken takılırsan anlamı hemen görürsün.</p>"],
+          ["Balonu nasıl dinlerim?", "<p>Balonun yanındaki ▶ düğmesine dokun; tekrar dokunursan durur. Balonun kendisine dokunursan o balonu bütün dillerde, sesiyle ve sözlükle açarsın. Sesli okuma Plus özelliğidir.</p>"],
+          ["Sözlük nerede?", "<p>Kitabı özgün dilinden başka bir dilde okurken, karenin altında o karedeki zor kelimeler çip olarak çıkar. Çipe dokununca anlamı görünür ve kelime seslendirilir. Sözlük Plus özelliğidir.</p>"],
+          ["ℹ işaretli notlar ne?", "<p>Kültür notlarıdır: metindeki tarihî ya da kültürel göndermelerin (örneğin \"Damon ile Pythias\", \"Scotland Yard\") kısa açıklaması. Her dilde ve ücretsizdir.</p>"],
+          ["Uygulamanın dilini nasıl değiştiririm?", "<p>Kitap rafının üstündeki dil düğmelerinden. Düğmelerin ve menülerin dili, okuduğun kitabın dilinden bağımsızdır.</p>"]]],
+        ["Bölümler", [
+          ["Hangi bölümler ücretsiz?", "<p>Her kitabın ilk 2 bölümü tüm dillerde, tüm seviyelerde ve sesiyle açıktır.</p>"],
+          ["Sonraki bölümleri ücretsiz okuyabilir miyim?", "<p>Evet. Her kitapta 24 saatte bir sonraki bölümü ücretsiz açabilirsin. Bu bölümler sırayla açılır ve Tam metinle okunur; B1/A2, ses ve sözlük Plus'tadır. Bir sonraki ücretsiz bölüm hazır olunca istersen bildirim göndeririz.</p>"],
+          ["\"Yeni\" ve \"Plus\" rozetli kitaplar neden kilitli?", "<p>Yeni eklenen kitaplar ilk 7 gün yalnız Plus üyelerine açıktır. 7 gün sonra herkes için yukarıdaki kurallar geçerli olur.</p>"],
+          ["🔒 işaretli bölüme dokununca ne olur?", "<p>Plus ve kitap satın alma seçeneklerini gösteren ekran açılır. Bağlayıcı bir şey yapmadan kapatabilirsin.</p>"]]],
+        ["Plus ve satın alma", [
+          ["Livrino Plus neler açar?", "<p>Tüm kitapların tüm bölümlerini, B1 ve A2 seviyelerini, sesli okumayı, sözlüğü ve yeni kitaplara ilk 7 gün erişimi.</p>"],
+          ["Hangi seçenekler var?", "<ul><li>Aylık Plus</li><li>Yıllık Plus: 14 gün ücretsiz denemeyle başlar</li><li>Tek kitap: o kitabın tüm bölümleri ve özellikleri, süresiz</li></ul><p>Fiyatlar satın alma ekranında kendi para biriminle görünür. Ödeme Google Play üzerinden yapılır.</p>"],
+          ["Deneme bitince ne olur?", "<p>Yıllık plan otomatik başlar ve ücret Google Play hesabından alınır. Deneme bitmeden ve her yıllık yenilemeden 2 gün önce sana hatırlatma göndeririz; istemezsen o tarihe kadar iptal edebilirsin.</p>"],
+          ["Aboneliği nasıl iptal ederim?", "<ol><li>Google Play Store'u aç, sağ üstteki profil resmine dokun.</li><li>Ödemeler ve abonelikler › Abonelikler'e gir.</li><li>Livrino'yu seç › Aboneliği iptal et.</li></ol><p>İptal edersen ödenmiş dönemin sonuna kadar Plus açık kalır. Uygulamayı silmek aboneliği iptal etmez.</p>"],
+          ["Telefon değiştirdim ya da uygulamayı yeniden kurdum; satın aldıklarım nerede?", "<p>Aynı Google hesabıyla açtığında hakların kendiliğinden gelir. Gelmezse satın alma ekranındaki \"Satın alımları geri yükle\" düğmesine dokun.</p>"],
+          ["İade alabilir miyim?", "<p>İade talepleri Google Play kurallarına göre Google üzerinden yapılır. Sorun yaşarsan " + M + " adresine yaz, yardımcı olalım.</p>"]]],
+        ["İndirme ve depolama", [
+          ["İnternet olmadan okuyabilir miyim?", "<p>Evet. İndirdiğin bölümler telefonda durur ve internetsiz açılır. İlk kitabın ilk bölümü uygulamayla birlikte gelir.</p>"],
+          ["Bölümü ve sesleri nasıl indiririm?", "<p>Kitap sayfasında İndir'e dokun. Sesler dile göre ayrı paketlerdir; \"⋯ İndirme ve ses\" menüsünden yalnız istediğin dilin seslerini indirebilirsin.</p>"],
+          ["Yer açmak istiyorum.", "<p>Aynı menüden bir dilin seslerini ya da bütün kitabı silebilirsin. Sonra istersen yeniden indirirsin; ilerlemen ve satın aldıkların kaybolmaz.</p>"],
+          ["Kitaplar güncellenir mi?", "<p>Evet. Bir bölümü düzelttiğimizde (görsel, çeviri, ses) uygulama açılışta yeni sürümü kendisi indirir. Rafı aşağı çekerek elle de yenileyebilirsin.</p>"]]],
+        ["Sorun bildirme, iletişim ve gizlilik", [
+          ["Bir karede hata gördüm.", "<p>Karenin altındaki ⚑ düğmesine dokun, ne olduğunu seç, istersen kısa bir not ekle. Bildirimler bize doğrudan gelir ve düzeltmeler sonraki güncellemelerde uygulamaya yansır. İnternet yoksa bildirim, bağlantı gelince gönderilir.</p>"],
+          ["Size nasıl ulaşırım?", "<p><a href=\"mailto:" + M + "\">" + M + "</a> adresine yaz. Genellikle 2 iş günü içinde cevap veririz.</p>"],
+          ["Hangi bilgilerimi topluyorsunuz?", "<p>Hesap açman gerekmez. Satın alma kayıtları için anonim bir cihaz kimliği kullanılır. Sorun bildirimlerinde kare, dil, seviye ve ekran genişliği gönderilir; adın ya da e-postan gönderilmez. Ayrıntılar ve verilerini sildirme yolu: <a href=\"https://livrino.app/gizlilik\">livrino.app/gizlilik</a>.</p>"]]]] },
+    en: { title: "Help & FAQ", back: "Back to the bookshelf", alt: "Didn't find your answer? Write to us: ",
+      s: [
+        ["Reading", [
+          ["What do Full, B1 and A2 mean?", "<p>Full is the complete text: the author's own sentences or our full translation. B1 and A2 tell the same scenes in simpler language for learners; A2 is the easiest. You can switch language and level at any time with the selectors at the top.</p>"],
+          ["Which languages can I read in?", "<p>Books can be read in Turkish, English, German and Spanish. The book page shows which levels each language has.</p>"],
+          ["What is dual text (+TR)?", "<p>It shows the sentence in a language you know in small type under the balloon. If you get stuck while reading in the language you are learning, you see the meaning right away.</p>"],
+          ["How do I listen to a balloon?", "<p>Tap the ▶ button next to the balloon; tap again to stop. Tap the balloon itself to open it in every language, with audio and the glossary. Audio is a Plus feature.</p>"],
+          ["Where is the glossary?", "<p>When you read a book in a language other than its original one, the harder words of each panel appear as chips under it. Tap a chip to see the meaning and hear the word. The glossary is a Plus feature.</p>"],
+          ["What are the notes marked ℹ?", "<p>Culture notes: short explanations of historical or cultural references in the text (for example \"Damon and Pythias\" or \"Scotland Yard\"). They are free and available in every language.</p>"],
+          ["How do I change the app language?", "<p>Use the language buttons at the top of the bookshelf. The language of buttons and menus is independent of the language you read in.</p>"]]],
+        ["Chapters", [
+          ["Which chapters are free?", "<p>The first 2 chapters of every book are open in all languages and levels, with audio.</p>"],
+          ["Can I read later chapters for free?", "<p>Yes. In every book you can unlock the next chapter for free once every 24 hours. These chapters open in order and are read in the Full text; B1/A2, audio and the glossary come with Plus. If you like, we notify you when your next free chapter is ready.</p>"],
+          ["Why are books with a \"New\" and \"Plus\" badge locked?", "<p>New books are open only to Plus members for their first 7 days. After that, the rules above apply to everyone.</p>"],
+          ["What happens when I tap a chapter marked 🔒?", "<p>A screen with the Plus and book purchase options opens. You can close it without committing to anything.</p>"]]],
+        ["Plus and purchases", [
+          ["What does Livrino Plus unlock?", "<p>Every chapter of every book, the B1 and A2 levels, audio, the glossary, and access to new books in their first 7 days.</p>"],
+          ["Which options are there?", "<ul><li>Monthly Plus</li><li>Yearly Plus: starts with a 14-day free trial</li><li>Single book: all chapters and features of that book, forever</li></ul><p>Prices appear in your own currency on the purchase screen. Payment is handled by Google Play.</p>"],
+          ["What happens when the trial ends?", "<p>The yearly plan starts automatically and is charged to your Google Play account. We remind you 2 days before the trial ends and 2 days before each yearly renewal, so you can cancel before then if you wish.</p>"],
+          ["How do I cancel my subscription?", "<ol><li>Open the Google Play Store and tap your profile picture at the top right.</li><li>Go to Payments & subscriptions › Subscriptions.</li><li>Choose Livrino › Cancel subscription.</li></ol><p>After cancelling, Plus stays active until the end of the paid period. Deleting the app does not cancel the subscription.</p>"],
+          ["I changed phones or reinstalled the app. Where are my purchases?", "<p>Open the app with the same Google account and your purchases come back by themselves. If they don't, tap \"Restore purchases\" on the purchase screen.</p>"],
+          ["Can I get a refund?", "<p>Refunds are requested from Google under Google Play's policies. If you have a problem, write to " + M + " and we'll help.</p>"]]],
+        ["Downloads and storage", [
+          ["Can I read without internet?", "<p>Yes. Downloaded chapters stay on your phone and open offline. The first chapter of the first book comes with the app.</p>"],
+          ["How do I download chapters and audio?", "<p>Tap Download on the book page. Audio comes in separate packs per language; in the \"⋯ Downloads & audio\" menu you can download only the language you want.</p>"],
+          ["I want to free up space.", "<p>In the same menu you can delete a language's audio or the whole book. You can download it again later; your progress and purchases are not lost.</p>"],
+          ["Are books updated?", "<p>Yes. When we fix a chapter (image, translation, audio), the app downloads the new version by itself when it opens. You can also refresh by pulling the bookshelf down.</p>"]]],
+        ["Reporting problems, contact and privacy", [
+          ["I found a mistake in a panel.", "<p>Tap the ⚑ button under the panel, choose what is wrong and add a short note if you like. Reports come straight to us and fixes reach the app in later updates. Without internet, the report is sent once you are back online.</p>"],
+          ["How can I contact you?", "<p>Write to <a href=\"mailto:" + M + "\">" + M + "</a>. We usually answer within 2 working days.</p>"],
+          ["What data do you collect?", "<p>You don't need an account. An anonymous device ID is used for purchase records. Problem reports send the panel, language, level and screen width; your name and e-mail are not sent. Details and how to have your data deleted: <a href=\"https://livrino.app/gizlilik\">livrino.app/gizlilik</a>.</p>"]]]] },
+    de: { title: "Hilfe & FAQ", back: "Zurück zum Bücherregal", alt: "Keine Antwort gefunden? Schreib uns: ",
+      s: [
+        ["Lesen", [
+          ["Was bedeuten Voll, B1 und A2?", "<p>Voll ist der vollständige Text: die eigenen Sätze des Autors oder unsere vollständige Übersetzung. B1 und A2 erzählen dieselben Szenen in einfacherer Sprache für Lernende; A2 ist am leichtesten. Sprache und Niveau kannst du jederzeit oben umstellen.</p>"],
+          ["In welchen Sprachen kann ich lesen?", "<p>Die Bücher gibt es auf Türkisch, Englisch, Deutsch und Spanisch. Auf der Buchseite steht, welche Niveaus es in jeder Sprache gibt.</p>"],
+          ["Was ist der Zweisprachentext (+TR)?", "<p>Er zeigt den Satz in einer Sprache, die du kennst, klein unter der Sprechblase. Wenn du beim Lesen in deiner Lernsprache hängen bleibst, siehst du die Bedeutung sofort.</p>"],
+          ["Wie höre ich mir eine Sprechblase an?", "<p>Tippe auf ▶ neben der Sprechblase; nochmals tippen stoppt. Tippst du auf die Sprechblase selbst, öffnet sie sich in allen Sprachen, mit Ton und Glossar. Vorlesen ist eine Plus-Funktion.</p>"],
+          ["Wo ist das Glossar?", "<p>Liest du ein Buch nicht in seiner Originalsprache, erscheinen die schwierigeren Wörter eines Bildes als Chips darunter. Ein Tipp zeigt die Bedeutung und spricht das Wort. Das Glossar ist eine Plus-Funktion.</p>"],
+          ["Was sind die Hinweise mit ℹ?", "<p>Kulturhinweise: kurze Erklärungen historischer oder kultureller Anspielungen im Text (zum Beispiel „Damon und Phintias“ oder „Scotland Yard“). Sie sind kostenlos und in jeder Sprache verfügbar.</p>"],
+          ["Wie ändere ich die Sprache der App?", "<p>Über die Sprachtasten oben im Bücherregal. Die Sprache von Tasten und Menüs ist unabhängig von der Sprache, in der du liest.</p>"]]],
+        ["Kapitel", [
+          ["Welche Kapitel sind kostenlos?", "<p>Die ersten 2 Kapitel jedes Buches sind in allen Sprachen und Niveaus offen, mit Ton.</p>"],
+          ["Kann ich spätere Kapitel kostenlos lesen?", "<p>Ja. In jedem Buch kannst du alle 24 Stunden das nächste Kapitel kostenlos freischalten. Diese Kapitel öffnen sich der Reihe nach und werden im Volltext gelesen; B1/A2, Ton und Glossar gibt es mit Plus. Auf Wunsch benachrichtigen wir dich, wenn dein nächstes kostenloses Kapitel bereit ist.</p>"],
+          ["Warum sind Bücher mit „Neu“ und „Plus“ gesperrt?", "<p>Neue Bücher sind in den ersten 7 Tagen nur für Plus-Mitglieder offen. Danach gelten die Regeln oben für alle.</p>"],
+          ["Was passiert, wenn ich auf ein Kapitel mit 🔒 tippe?", "<p>Es öffnet sich eine Seite mit den Plus- und Kaufoptionen. Du kannst sie schließen, ohne dich zu etwas zu verpflichten.</p>"]]],
+        ["Plus und Käufe", [
+          ["Was schaltet Livrino Plus frei?", "<p>Alle Kapitel aller Bücher, die Niveaus B1 und A2, das Vorlesen, das Glossar und den Zugang zu neuen Büchern in ihren ersten 7 Tagen.</p>"],
+          ["Welche Optionen gibt es?", "<ul><li>Plus monatlich</li><li>Plus jährlich: beginnt mit 14 Tagen kostenlosem Test</li><li>Einzelnes Buch: alle Kapitel und Funktionen dieses Buches, unbefristet</li></ul><p>Die Preise siehst du auf der Kaufseite in deiner Währung. Bezahlt wird über Google Play.</p>"],
+          ["Was passiert nach dem Testzeitraum?", "<p>Das Jahresabo startet automatisch und wird über dein Google-Play-Konto abgerechnet. 2 Tage vor Testende und vor jeder jährlichen Verlängerung erinnern wir dich, damit du vorher kündigen kannst, wenn du möchtest.</p>"],
+          ["Wie kündige ich mein Abo?", "<ol><li>Öffne den Google Play Store und tippe oben rechts auf dein Profilbild.</li><li>Gehe zu Zahlungen & Abos › Abos.</li><li>Wähle Livrino › Abo kündigen.</li></ol><p>Nach der Kündigung bleibt Plus bis zum Ende des bezahlten Zeitraums aktiv. Das Löschen der App kündigt das Abo nicht.</p>"],
+          ["Ich habe das Handy gewechselt oder die App neu installiert. Wo sind meine Käufe?", "<p>Öffne die App mit demselben Google-Konto, dann kommen deine Käufe von selbst zurück. Falls nicht, tippe auf der Kaufseite auf „Käufe wiederherstellen“.</p>"],
+          ["Kann ich eine Erstattung bekommen?", "<p>Erstattungen werden nach den Regeln von Google Play bei Google beantragt. Bei Problemen schreib an " + M + ", wir helfen gern.</p>"]]],
+        ["Download und Speicher", [
+          ["Kann ich ohne Internet lesen?", "<p>Ja. Heruntergeladene Kapitel bleiben auf dem Handy und öffnen sich offline. Das erste Kapitel des ersten Buches ist schon in der App.</p>"],
+          ["Wie lade ich Kapitel und Ton herunter?", "<p>Tippe auf der Buchseite auf Herunterladen. Der Ton kommt in eigenen Paketen pro Sprache; im Menü „⋯ Downloads &amp; Audio“ kannst du nur die gewünschte Sprache laden.</p>"],
+          ["Ich möchte Speicher freigeben.", "<p>Im selben Menü kannst du den Ton einer Sprache oder das ganze Buch löschen. Später kannst du es wieder laden; Fortschritt und Käufe gehen nicht verloren.</p>"],
+          ["Werden die Bücher aktualisiert?", "<p>Ja. Wenn wir ein Kapitel verbessern (Bild, Übersetzung, Ton), lädt die App die neue Version beim Öffnen selbst. Du kannst auch durch Herunterziehen des Regals aktualisieren.</p>"]]],
+        ["Probleme melden, Kontakt und Datenschutz", [
+          ["Ich habe in einem Bild einen Fehler gefunden.", "<p>Tippe unter dem Bild auf ⚑, wähle, was nicht stimmt, und füge bei Bedarf eine kurze Notiz hinzu. Meldungen kommen direkt bei uns an, Korrekturen erscheinen in späteren Updates. Ohne Internet wird die Meldung gesendet, sobald du wieder online bist.</p>"],
+          ["Wie erreiche ich euch?", "<p>Schreib an <a href=\"mailto:" + M + "\">" + M + "</a>. Wir antworten meist innerhalb von 2 Werktagen.</p>"],
+          ["Welche Daten erhebt ihr?", "<p>Du brauchst kein Konto. Für Kaufdaten wird eine anonyme Geräte-ID verwendet. Problemmeldungen senden Bild, Sprache, Niveau und Bildschirmbreite; dein Name und deine E-Mail werden nicht gesendet. Details und Löschung deiner Daten: <a href=\"https://livrino.app/gizlilik\">livrino.app/gizlilik</a>.</p>"]]]] },
+    es: { title: "Ayuda y preguntas frecuentes", back: "Volver a la estantería", alt: "¿No encuentras tu respuesta? Escríbenos: ",
+      s: [
+        ["Lectura", [
+          ["¿Qué significan Completo, B1 y A2?", "<p>Completo es el texto entero: las frases del propio autor o nuestra traducción completa. B1 y A2 cuentan las mismas escenas con un lenguaje más sencillo para estudiantes; A2 es el más fácil. Puedes cambiar el idioma y el nivel en cualquier momento con los selectores de arriba.</p>"],
+          ["¿En qué idiomas puedo leer?", "<p>Los libros se pueden leer en turco, inglés, alemán y español. En la página de cada libro verás qué niveles tiene cada idioma.</p>"],
+          ["¿Qué es el texto doble (+TR)?", "<p>Muestra la frase en un idioma que conoces, en letra pequeña bajo el bocadillo. Si te atascas leyendo en el idioma que aprendes, ves el significado al instante.</p>"],
+          ["¿Cómo escucho un bocadillo?", "<p>Toca el botón ▶ junto al bocadillo; tócalo otra vez para parar. Si tocas el bocadillo, se abre en todos los idiomas, con audio y glosario. El audio es una función de Plus.</p>"],
+          ["¿Dónde está el glosario?", "<p>Cuando lees un libro en un idioma distinto del original, las palabras más difíciles de cada viñeta aparecen debajo como chips. Al tocar un chip ves el significado y oyes la palabra. El glosario es una función de Plus.</p>"],
+          ["¿Qué son las notas con ℹ?", "<p>Notas culturales: explicaciones breves de referencias históricas o culturales del texto (por ejemplo, «Damón y Pitias» o «Scotland Yard»). Son gratuitas y están en todos los idiomas.</p>"],
+          ["¿Cómo cambio el idioma de la app?", "<p>Con los botones de idioma de la parte superior de la estantería. El idioma de botones y menús es independiente del idioma en que lees.</p>"]]],
+        ["Capítulos", [
+          ["¿Qué capítulos son gratuitos?", "<p>Los 2 primeros capítulos de cada libro están abiertos en todos los idiomas y niveles, con audio.</p>"],
+          ["¿Puedo leer gratis los capítulos siguientes?", "<p>Sí. En cada libro puedes desbloquear gratis el siguiente capítulo una vez cada 24 horas. Se abren en orden y se leen en el texto completo; B1/A2, el audio y el glosario están en Plus. Si quieres, te avisamos cuando tu próximo capítulo gratuito esté listo.</p>"],
+          ["¿Por qué están bloqueados los libros con la insignia «Nuevo» y «Plus»?", "<p>Los libros nuevos solo están abiertos para los miembros Plus durante sus primeros 7 días. Después, las reglas de arriba valen para todos.</p>"],
+          ["¿Qué pasa si toco un capítulo con 🔒?", "<p>Se abre una pantalla con las opciones de Plus y de compra del libro. Puedes cerrarla sin comprometerte a nada.</p>"]]],
+        ["Plus y compras", [
+          ["¿Qué desbloquea Livrino Plus?", "<p>Todos los capítulos de todos los libros, los niveles B1 y A2, el audio, el glosario y el acceso a los libros nuevos en sus primeros 7 días.</p>"],
+          ["¿Qué opciones hay?", "<ul><li>Plus mensual</li><li>Plus anual: empieza con 14 días de prueba gratuita</li><li>Un libro: todos los capítulos y funciones de ese libro, para siempre</li></ul><p>Los precios aparecen en tu moneda en la pantalla de compra. El pago se hace a través de Google Play.</p>"],
+          ["¿Qué pasa cuando termina la prueba?", "<p>El plan anual empieza automáticamente y se cobra en tu cuenta de Google Play. Te avisamos 2 días antes de que termine la prueba y antes de cada renovación anual, para que puedas cancelar antes si lo deseas.</p>"],
+          ["¿Cómo cancelo la suscripción?", "<ol><li>Abre Google Play Store y toca tu foto de perfil arriba a la derecha.</li><li>Ve a Pagos y suscripciones › Suscripciones.</li><li>Elige Livrino › Cancelar suscripción.</li></ol><p>Tras cancelar, Plus sigue activo hasta el final del periodo pagado. Borrar la app no cancela la suscripción.</p>"],
+          ["He cambiado de móvil o reinstalado la app. ¿Dónde están mis compras?", "<p>Abre la app con la misma cuenta de Google y tus compras vuelven solas. Si no, toca «Restaurar compras» en la pantalla de compra.</p>"],
+          ["¿Puedo pedir un reembolso?", "<p>Los reembolsos se piden a Google según las normas de Google Play. Si tienes algún problema, escribe a " + M + " y te ayudamos.</p>"]]],
+        ["Descargas y almacenamiento", [
+          ["¿Puedo leer sin internet?", "<p>Sí. Los capítulos descargados se quedan en el móvil y se abren sin conexión. El primer capítulo del primer libro viene con la app.</p>"],
+          ["¿Cómo descargo capítulos y audio?", "<p>Toca Descargar en la página del libro. El audio va en paquetes separados por idioma; en el menú «⋯ Descargas y audio» puedes descargar solo el idioma que quieras.</p>"],
+          ["Quiero liberar espacio.", "<p>En el mismo menú puedes borrar el audio de un idioma o el libro entero. Después puedes volver a descargarlo; no pierdes tu progreso ni tus compras.</p>"],
+          ["¿Se actualizan los libros?", "<p>Sí. Cuando corregimos un capítulo (imagen, traducción, audio), la app descarga la nueva versión sola al abrirse. También puedes actualizar tirando hacia abajo de la estantería.</p>"]]],
+        ["Avisar de problemas, contacto y privacidad", [
+          ["He visto un error en una viñeta.", "<p>Toca el botón ⚑ bajo la viñeta, elige qué falla y añade una nota breve si quieres. Los avisos nos llegan directamente y las correcciones llegan a la app en próximas actualizaciones. Sin internet, el aviso se envía cuando vuelvas a tener conexión.</p>"],
+          ["¿Cómo os contacto?", "<p>Escribe a <a href=\"mailto:" + M + "\">" + M + "</a>. Solemos responder en 2 días laborables.</p>"],
+          ["¿Qué datos recogéis?", "<p>No necesitas cuenta. Para los registros de compra se usa un identificador anónimo del dispositivo. Los avisos de problemas envían la viñeta, el idioma, el nivel y el ancho de pantalla; no se envían tu nombre ni tu correo. Detalles y cómo borrar tus datos: <a href=\"https://livrino.app/gizlilik\">livrino.app/gizlilik</a>.</p>"]]]] }
+  };
+  const DILLER = ["tr", "en", "de", "es"];
+  const q = new URLSearchParams(location.search);
+  let ui = q.get("ui");
+  if (!DILLER.includes(ui)) { try { ui = JSON.parse(localStorage.getItem("aicomics.ui")); } catch {} }
+  if (!DILLER.includes(ui)) ui = (navigator.language || "tr").slice(0, 2);
+  if (!DILLER.includes(ui)) ui = "tr";
+  const $ = (id) => document.getElementById(id);
+  function ciz() {
+    const T = L[ui];
+    document.documentElement.lang = ui;
+    document.title = "Livrino — " + T.title;
+    $("baslik").textContent = T.title;
+    $("geri").setAttribute("aria-label", T.back);
+    const m = $("icerik");
+    m.replaceChildren();
+    for (const [bas, sorular] of T.s) {
+      const h = document.createElement("h2"); h.textContent = bas; m.append(h);
+      for (const [soru, cevap] of sorular) {
+        const d = document.createElement("details");
+        const s = document.createElement("summary"); s.textContent = soru;
+        const c = document.createElement("div"); c.className = "cevap"; c.innerHTML = cevap;
+        d.append(s, c); m.append(d);
+      }
+    }
+    const a = document.createElement("p"); a.className = "alt";
+    a.append(T.alt); const l = document.createElement("a"); l.href = "mailto:" + M; l.textContent = M; a.append(l); m.append(a);
+    $("dil").querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.dil === ui)));
+  }
+  for (const d of DILLER) {
+    const b = document.createElement("button"); b.type = "button"; b.dataset.dil = d; b.textContent = d.toUpperCase();
+    b.addEventListener("click", () => { ui = d; ciz(); });
+    $("dil").append(b);
+  }
+  $("geri").addEventListener("click", () => { if (history.length > 1) history.back(); else location.href = "index.html"; });
+  ciz();
+})();
+</script>
+</body>
+</html>
