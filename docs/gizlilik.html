@@ -33,7 +33,7 @@ a { color:var(--accent); }
 
 <article id="tr" lang="tr">
 <h1>Gizlilik Politikası</h1>
-<p class="date">Yürürlük tarihi: 1 Kasım 2026</p>
+<p class="date">Yürürlük tarihi: 5 Kasım 2026</p>
 <p>Bu politika, Livrino mobil uygulamasının (“Uygulama”) hangi bilgileri işlediğini açıklar. Uygulama, bireysel bir geliştirici tarafından yayımlanır. Sorularınız için: <a href="mailto:destek@livrino.app">destek@livrino.app</a></p>
 
 <h2>Kısaca</h2>
@@ -44,10 +44,14 @@ a { color:var(--accent); }
 </ul>
 
 <h2>Cihazınızda saklananlar</h2>
-<p>Uygulama şu bilgileri yalnız kendi depolama alanında, cihazınızda tutar: okuma ilerlemesi (hangi kitapta hangi bölümde olduğunuz), dil ve seviye seçimleriniz, arayüz dili, indirdiğiniz kitap ve ses dosyaları, ücretsiz açılan bölümler ve satın alma durumunuz. Bu bilgiler bize gönderilmez. Uygulamayı silmek hepsini siler.</p>
+<p>Uygulama şu bilgileri yalnız kendi depolama alanında, cihazınızda tutar: okuma ilerlemesi (hangi kitapta hangi bölümde olduğunuz), dil ve seviye seçimleriniz, arayüz dili, indirdiğiniz kitap ve ses dosyaları, ücretsiz açılan bölümler ve satın alma durumunuz. Okuma ilerlemeniz ve ayarlarınız bize gönderilmez. Uygulamayı silmek hepsini siler (sunucudaki ücretsiz bölüm kaydı için aşağıya bakın).</p>
 
 <h2>İnternet bağlantısı</h2>
-<p>Uygulama, kitap listesini, kitap paketlerini ve sürüm bilgisini GitHub üzerinden (github.com ve bağlı indirme sunucuları) indirir. Her internet isteğinde olduğu gibi GitHub, IP adresiniz ve cihaz/tarayıcı bilgisi gibi teknik bağlantı verilerini görür; bu veriler <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Gizlilik Bildirimi</a>’ne tabidir. Biz bu verilere erişmeyiz. Uygulamanın kullandığı izinler: internet erişimi, Google Play üzerinden satın alma ve (izin verirseniz) bildirimler.</p>
+<p>Uygulama kitap listesini, kapakları ve kitap paketlerini <b>cdn.livrino.app</b> adresinden, bölüm paketlerini <b>api.livrino.app</b> adresinden indirir. Bu iki adres Cloudflare altyapısında çalışır. Eski test sürümleri bu dosyaları GitHub’dan (github.com) da indirebilir. Her internet isteğinde olduğu gibi bu hizmetler IP adresiniz ve cihaz bilgisi gibi teknik bağlantı verilerini görür; bu veriler <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Gizlilik Politikası</a>’na ve <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Gizlilik Bildirimi</a>’ne tabidir. Biz IP adresinizi saklamayız.</p>
+<p>Kilitli bir bölümü indirirken Uygulama, satın alma bölümünde anlatılan rastgele uygulama kullanıcı kimliğini api.livrino.app’e gönderir. Sunucu bu kimlikle RevenueCat’e aboneliğiniz ya da satın aldığınız kitaplar olup olmadığını sorar. Ödeme yapmadan açtığınız ücretsiz bölümleri ve son açma zamanını, aynı bölümü yeniden indirebilmeniz ve günlük ücretsiz sınırın işlemesi için bu kimlikle birlikte kaydeder. Bu kayıt adınızı ya da iletişim bilginizi içermez. Uygulamanın kullandığı izinler: internet erişimi, Google Play üzerinden satın alma ve (izin verirseniz) bildirimler.</p>
+
+<h2>Sorun bildirimleri</h2>
+<p>Bir karede “Bu karede sorun var” düğmesiyle bildirim gönderirseniz api.livrino.app’e şunlar iletilir: kitap, bölüm ve kare kimliği, seçtiğiniz sorun türleri, yazdığınız not (en çok 600 karakter), okuma dili ve seviyesi, arayüz dili, uygulama sürümü ve ekran genişliği. Bildirimler hataları düzeltmek için 180 gün saklanır, sonra kendiliğinden silinir. Kötüye kullanımı önlemek için IP adresinizden türetilen geri çevrilemez bir özet, günlük bildirim sayısını saymak amacıyla 2 gün tutulur; IP adresinizin kendisi saklanmaz. Lütfen nota kişisel bilgi yazmayın.</p>
 
 <h2>Satın almalar</h2>
 <p>Ödemeler Google Play tarafından işlenir; kart ya da ödeme bilgileriniz bize ulaşmaz. Satın almalarınızın doğrulanması ve aboneliğinizin cihazlarınızda tanınması için RevenueCat hizmetini kullanırız. RevenueCat’e kişisel kimliğinizi içermeyen rastgele bir uygulama kullanıcı kimliği ile satın alma kayıtları (ürün, tarih, durum) iletilir; bu bilgiler <a href="https://www.revenuecat.com/privacy">RevenueCat Gizlilik Politikası</a>’na tabidir. RevenueCat ayrıca cihaz modeli, işletim sistemi sürümü, uygulama sürümü ve ülke/dil gibi teknik bilgileri alabilir. Bu bilgileri yalnız satın almalarınızın çalışması için kullanırız; reklam ya da profil çıkarma için kullanmayız ve satmayız. Test sürümünde satın almalar RevenueCat'in test mağazasında yapılır ve ücret alınmaz.</p>
@@ -58,15 +62,16 @@ a { color:var(--accent); }
 <p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bu yaştaki çocuklardan bilerek kişisel bilgi toplamaz.</p>
 
 <h2 id="silme">Verilerinizin silinmesi ve haklarınız</h2>
-<p>Cihazdaki tüm veriler uygulamayı silmekle ya da uygulama içinden kitapları kaldırmakla silinir. Satın alma kayıtlarıyla ilgili bilgi, düzeltme ya da silme talepleriniz için (KVKK ve GDPR kapsamındaki haklarınız dahil) <a href="mailto:destek@livrino.app">destek@livrino.app</a> adresine yazabilirsiniz.</p>
+<p>Cihazdaki tüm veriler uygulamayı silmekle ya da uygulama içinden kitapları kaldırmakla silinir. Satın alma kayıtları, sunucudaki ücretsiz bölüm kaydı ve sorun bildirimleriyle ilgili bilgi, düzeltme ya da silme talepleriniz için (KVKK ve GDPR kapsamındaki haklarınız dahil) <a href="mailto:destek@livrino.app">destek@livrino.app</a> adresine yazabilirsiniz.</p>
 
 <h2>Değişiklikler</h2>
 <p>Bu politika değişirse güncel sürüm bu sayfada, yeni yürürlük tarihiyle yayımlanır.</p>
+<p>Ayrıca bkz. <a href="kosullar.html">Kullanım Koşulları</a>.</p>
 </article>
 
 <article id="en" lang="en">
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: 1 November 2026</p>
+<p class="date">Effective date: 5 November 2026</p>
 <p>This policy explains what information the Livrino mobile app (“the App”) handles. The App is published by an individual developer. Questions: <a href="mailto:destek@livrino.app">destek@livrino.app</a></p>
 
 <h2>In short</h2>
@@ -77,10 +82,14 @@ a { color:var(--accent); }
 </ul>
 
 <h2>Stored on your device</h2>
-<p>The App keeps the following only in its own storage on your device: reading progress (which book and episode you are on), language and level choices, interface language, downloaded book and audio files, episodes unlocked for free, and your purchase status. None of this is sent to us. Uninstalling the App deletes all of it.</p>
+<p>The App keeps the following only in its own storage on your device: reading progress (which book and episode you are on), language and level choices, interface language, downloaded book and audio files, episodes unlocked for free, and your purchase status. Your reading progress and settings are not sent to us. Uninstalling the App deletes all of it (see below for the server record of free episodes).</p>
 
 <h2>Internet connection</h2>
-<p>The App downloads the book list, book packages and version information from GitHub (github.com and its download servers). As with any internet request, GitHub sees technical connection data such as your IP address and device/browser information; this is governed by the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. We do not have access to this data. The App uses these permissions: internet access, purchases through Google Play and (if you allow it) notifications.</p>
+<p>The App downloads the book list, covers and book packages from <b>cdn.livrino.app</b> and episode packages from <b>api.livrino.app</b>. Both run on Cloudflare’s infrastructure. Older test versions may also download these files from GitHub (github.com). As with any internet request, these services see technical connection data such as your IP address and device information; this is governed by the <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a> and the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. We do not store your IP address.</p>
+<p>When downloading a locked episode, the App sends the random app user ID described under Purchases to api.livrino.app. The server uses this ID to ask RevenueCat whether you have a subscription or have bought the book. It records the episodes you unlocked for free and when you last unlocked one, together with this ID, so that you can download them again and the daily free limit works. This record contains no name or contact details. The App uses these permissions: internet access, purchases through Google Play and (if you allow it) notifications.</p>
+
+<h2>Problem reports</h2>
+<p>If you send a report with the “Something is wrong in this panel” button, the following is sent to api.livrino.app: the book, episode and panel ID, the problem types you chose, your note (up to 600 characters), reading language and level, interface language, app version and screen width. Reports are kept for 180 days to fix errors and are then deleted automatically. To prevent abuse, an irreversible hash derived from your IP address is kept for 2 days to count reports per day; your IP address itself is not stored. Please do not put personal information in the note.</p>
 
 <h2>Purchases</h2>
 <p>Payments are processed by Google Play; your card or payment details never reach us. We use RevenueCat to verify purchases and to recognise your subscription across your devices. RevenueCat receives a random app user ID that does not identify you personally, together with purchase records (product, date, status); this is governed by the <a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a>. RevenueCat may also receive technical information such as device model, operating system version, app version and country/language. We use this information only to make your purchases work; we do not use it for advertising or profiling, and we do not sell it. In the test version purchases go through RevenueCat’s test store and nothing is charged.</p>
@@ -91,15 +100,16 @@ a { color:var(--accent); }
 <p>The App is not directed at children under 13 and does not knowingly collect personal information from them.</p>
 
 <h2 id="delete">Deleting your data and your rights</h2>
-<p>All on-device data is deleted by uninstalling the App or removing books inside it. For access, correction or deletion requests about purchase records (including your rights under the GDPR), write to <a href="mailto:destek@livrino.app">destek@livrino.app</a>.</p>
+<p>All on-device data is deleted by uninstalling the App or removing books inside it. For access, correction or deletion requests about purchase records, the server record of free episodes or problem reports (including your rights under the GDPR), write to <a href="mailto:destek@livrino.app">destek@livrino.app</a>.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the current version will be published on this page with a new effective date.</p>
+<p>See also the <a href="kosullar.html#en">Terms of Service</a>.</p>
 </article>
 
 <article id="de" lang="de">
 <h1>Datenschutzerklärung</h1>
-<p class="date">Gültig ab: 1. November 2026</p>
+<p class="date">Gültig ab: 5. November 2026</p>
 <p>Diese Erklärung beschreibt, welche Informationen die mobile App Livrino („die App“) verarbeitet. Die App wird von einem Einzelentwickler veröffentlicht. Fragen: <a href="mailto:destek@livrino.app">destek@livrino.app</a></p>
 
 <h2>Kurz gesagt</h2>
@@ -110,10 +120,14 @@ a { color:var(--accent); }
 </ul>
 
 <h2>Auf deinem Gerät gespeichert</h2>
-<p>Die App speichert Folgendes ausschließlich in ihrem eigenen Speicher auf deinem Gerät: Lesefortschritt (welches Buch, welche Folge), Sprach- und Stufenwahl, Oberflächensprache, heruntergeladene Buch- und Audiodateien, kostenlos freigeschaltete Folgen und deinen Kaufstatus. Nichts davon wird an uns gesendet. Wenn du die App deinstallierst, wird alles gelöscht.</p>
+<p>Die App speichert Folgendes ausschließlich in ihrem eigenen Speicher auf deinem Gerät: Lesefortschritt (welches Buch, welche Folge), Sprach- und Stufenwahl, Oberflächensprache, heruntergeladene Buch- und Audiodateien, kostenlos freigeschaltete Folgen und deinen Kaufstatus. Lesefortschritt und Einstellungen werden nicht an uns gesendet. Wenn du die App deinstallierst, wird alles gelöscht (zum Servereintrag für Gratisfolgen siehe unten).</p>
 
 <h2>Internetverbindung</h2>
-<p>Die App lädt die Bücherliste, Buchpakete und Versionsinformationen von GitHub (github.com und zugehörige Download-Server). Wie bei jeder Internetanfrage sieht GitHub technische Verbindungsdaten wie deine IP-Adresse und Geräte-/Browserinformationen; dafür gilt die <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub-Datenschutzerklärung</a>. Wir haben keinen Zugriff auf diese Daten. Die App nutzt diese Berechtigungen: Internetzugang, Käufe über Google Play und (wenn du zustimmst) Benachrichtigungen.</p>
+<p>Die App lädt die Bücherliste, Cover und Buchpakete von <b>cdn.livrino.app</b> und die Folgenpakete von <b>api.livrino.app</b>. Beide laufen auf der Infrastruktur von Cloudflare. Ältere Testversionen können diese Dateien auch von GitHub (github.com) laden. Wie bei jeder Internetanfrage sehen diese Dienste technische Verbindungsdaten wie deine IP-Adresse und Geräteinformationen; dafür gelten die <a href="https://www.cloudflare.com/privacypolicy/">Datenschutzrichtlinie von Cloudflare</a> und die <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub-Datenschutzerklärung</a>. Wir speichern deine IP-Adresse nicht.</p>
+<p>Beim Laden einer gesperrten Folge sendet die App die unter „Käufe“ beschriebene zufällige App-Nutzer-ID an api.livrino.app. Der Server fragt mit dieser ID bei RevenueCat nach, ob du ein Abo hast oder das Buch gekauft hast. Er speichert zusammen mit dieser ID, welche Folgen du kostenlos freigeschaltet hast und wann zuletzt, damit du sie erneut laden kannst und das tägliche Gratislimit funktioniert. Dieser Eintrag enthält weder Namen noch Kontaktdaten. Die App nutzt diese Berechtigungen: Internetzugang, Käufe über Google Play und (wenn du zustimmst) Benachrichtigungen.</p>
+
+<h2>Problemmeldungen</h2>
+<p>Wenn du über die Schaltfläche „In diesem Bild stimmt etwas nicht“ eine Meldung sendest, wird Folgendes an api.livrino.app übermittelt: Buch-, Folgen- und Bild-ID, die gewählten Problemarten, deine Notiz (höchstens 600 Zeichen), Lesesprache und -stufe, Oberflächensprache, App-Version und Bildschirmbreite. Meldungen werden 180 Tage zur Fehlerbehebung aufbewahrt und danach automatisch gelöscht. Zum Schutz vor Missbrauch wird ein nicht umkehrbarer Hashwert deiner IP-Adresse 2 Tage lang gespeichert, um Meldungen pro Tag zu zählen; die IP-Adresse selbst wird nicht gespeichert. Bitte schreib keine persönlichen Daten in die Notiz.</p>
 
 <h2>Käufe</h2>
 <p>Zahlungen werden von Google Play abgewickelt; deine Karten- oder Zahlungsdaten erreichen uns nie. Wir nutzen RevenueCat, um Käufe zu prüfen und dein Abo auf deinen Geräten zu erkennen. RevenueCat erhält eine zufällige App-Nutzer-ID, die dich nicht persönlich identifiziert, sowie Kaufdatensätze (Produkt, Datum, Status); dafür gilt die <a href="https://www.revenuecat.com/privacy">RevenueCat-Datenschutzrichtlinie</a>. RevenueCat kann außerdem technische Angaben wie Gerätemodell, Betriebssystem- und App-Version sowie Land/Sprache erhalten. Wir nutzen diese Angaben nur, damit deine Käufe funktionieren; nicht für Werbung oder Profilbildung, und wir verkaufen sie nicht. In der Testversion laufen Käufe über den Test-Store von RevenueCat; es wird nichts berechnet.</p>
@@ -124,15 +138,16 @@ a { color:var(--accent); }
 <p>Die App richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine personenbezogenen Daten von ihnen.</p>
 
 <h2 id="loeschen">Löschung deiner Daten und deine Rechte</h2>
-<p>Alle Daten auf dem Gerät werden gelöscht, wenn du die App deinstallierst oder Bücher in der App entfernst. Für Auskunft, Berichtigung oder Löschung von Kaufdatensätzen (einschließlich deiner Rechte nach der DSGVO) schreib an <a href="mailto:destek@livrino.app">destek@livrino.app</a>.</p>
+<p>Alle Daten auf dem Gerät werden gelöscht, wenn du die App deinstallierst oder Bücher in der App entfernst. Für Auskunft, Berichtigung oder Löschung von Kaufdatensätzen, dem Servereintrag zu Gratisfolgen oder Problemmeldungen (einschließlich deiner Rechte nach der DSGVO) schreib an <a href="mailto:destek@livrino.app">destek@livrino.app</a>.</p>
 
 <h2>Änderungen</h2>
 <p>Wenn sich diese Erklärung ändert, wird die aktuelle Fassung auf dieser Seite mit neuem Gültigkeitsdatum veröffentlicht.</p>
+<p>Siehe auch die <a href="kosullar.html#de">Nutzungsbedingungen</a>.</p>
 </article>
 
 <article id="es" lang="es">
 <h1>Política de privacidad</h1>
-<p class="date">Fecha de entrada en vigor: 1 de noviembre de 2026</p>
+<p class="date">Fecha de entrada en vigor: 5 de noviembre de 2026</p>
 <p>Esta política explica qué información trata la aplicación móvil Livrino («la App»). La App la publica un desarrollador individual. Preguntas: <a href="mailto:destek@livrino.app">destek@livrino.app</a></p>
 
 <h2>En resumen</h2>
@@ -143,10 +158,14 @@ a { color:var(--accent); }
 </ul>
 
 <h2>Guardado en tu dispositivo</h2>
-<p>La App guarda lo siguiente solo en su propio almacenamiento de tu dispositivo: progreso de lectura (qué libro y qué episodio), idioma y nivel elegidos, idioma de la interfaz, archivos de libros y audio descargados, episodios desbloqueados gratis y tu estado de compra. Nada de esto se nos envía. Al desinstalar la App se borra todo.</p>
+<p>La App guarda lo siguiente solo en su propio almacenamiento de tu dispositivo: progreso de lectura (qué libro y qué episodio), idioma y nivel elegidos, idioma de la interfaz, archivos de libros y audio descargados, episodios desbloqueados gratis y tu estado de compra. Tu progreso de lectura y tus ajustes no se nos envían. Al desinstalar la App se borra todo (sobre el registro de episodios gratis en el servidor, ver abajo).</p>
 
 <h2>Conexión a internet</h2>
-<p>La App descarga la lista de libros, los paquetes de libros y la información de versión desde GitHub (github.com y sus servidores de descarga). Como en cualquier petición por internet, GitHub ve datos técnicos de conexión como tu dirección IP y la información del dispositivo o navegador; esto se rige por la <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">Declaración de privacidad de GitHub</a>. Nosotros no tenemos acceso a esos datos. La App usa estos permisos: acceso a internet, compras a través de Google Play y (si lo permites) notificaciones.</p>
+<p>La App descarga la lista de libros, las portadas y los paquetes de libros desde <b>cdn.livrino.app</b>, y los paquetes de episodios desde <b>api.livrino.app</b>. Ambos funcionan sobre la infraestructura de Cloudflare. Las versiones de prueba antiguas también pueden descargar estos archivos desde GitHub (github.com). Como en cualquier petición por internet, estos servicios ven datos técnicos de conexión como tu dirección IP y la información del dispositivo; esto se rige por la <a href="https://www.cloudflare.com/privacypolicy/">Política de privacidad de Cloudflare</a> y la <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">Declaración de privacidad de GitHub</a>. No guardamos tu dirección IP.</p>
+<p>Al descargar un episodio bloqueado, la App envía a api.livrino.app el identificador aleatorio de usuario descrito en Compras. El servidor usa ese identificador para preguntar a RevenueCat si tienes una suscripción o has comprado el libro. Junto con ese identificador, guarda qué episodios has desbloqueado gratis y cuándo desbloqueaste el último, para que puedas volver a descargarlos y funcione el límite gratuito diario. Este registro no contiene nombre ni datos de contacto. La App usa estos permisos: acceso a internet, compras a través de Google Play y (si lo permites) notificaciones.</p>
+
+<h2>Avisos de problemas</h2>
+<p>Si envías un aviso con el botón «Algo falla en esta viñeta», se envía a api.livrino.app lo siguiente: el identificador del libro, del episodio y de la viñeta, los tipos de problema elegidos, tu nota (hasta 600 caracteres), el idioma y nivel de lectura, el idioma de la interfaz, la versión de la app y el ancho de pantalla. Los avisos se guardan 180 días para corregir errores y después se borran solos. Para evitar abusos se guarda durante 2 días un resumen irreversible derivado de tu dirección IP, solo para contar los avisos diarios; la dirección IP en sí no se guarda. Por favor, no escribas datos personales en la nota.</p>
 
 <h2>Compras</h2>
 <p>Los pagos los procesa Google Play; los datos de tu tarjeta o de pago nunca nos llegan. Usamos RevenueCat para verificar las compras y reconocer tu suscripción en tus dispositivos. RevenueCat recibe un identificador aleatorio de usuario de la app, que no te identifica personalmente, junto con los registros de compra (producto, fecha, estado); esto se rige por la <a href="https://www.revenuecat.com/privacy">Política de privacidad de RevenueCat</a>. RevenueCat también puede recibir datos técnicos como el modelo del dispositivo, la versión del sistema operativo y de la app, y el país/idioma. Solo usamos estos datos para que tus compras funcionen; no los usamos para publicidad ni para crear perfiles, y no los vendemos. En la versión de prueba las compras pasan por la tienda de prueba de RevenueCat y no se cobra nada.</p>
@@ -157,10 +176,11 @@ a { color:var(--accent); }
 <p>La App no está dirigida a menores de 13 años y no recopila a sabiendas información personal de ellos.</p>
 
 <h2 id="eliminar">Eliminación de tus datos y tus derechos</h2>
-<p>Todos los datos del dispositivo se borran al desinstalar la App o al eliminar libros dentro de ella. Para solicitudes de acceso, rectificación o supresión de los registros de compra (incluidos tus derechos según el RGPD), escribe a <a href="mailto:destek@livrino.app">destek@livrino.app</a>.</p>
+<p>Todos los datos del dispositivo se borran al desinstalar la App o al eliminar libros dentro de ella. Para solicitudes de acceso, rectificación o supresión de los registros de compra, del registro de episodios gratis en el servidor o de los avisos de problemas (incluidos tus derechos según el RGPD), escribe a <a href="mailto:destek@livrino.app">destek@livrino.app</a>.</p>
 
 <h2>Cambios</h2>
 <p>Si esta política cambia, la versión vigente se publicará en esta página con una nueva fecha de entrada en vigor.</p>
+<p>Consulta también las <a href="kosullar.html#es">Condiciones de uso</a>.</p>
 </article>
 </div>
 <script>
