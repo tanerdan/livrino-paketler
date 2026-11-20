@@ -171,6 +171,51 @@ a { color: var(--accent); }
           ["¿Cómo os contacto?", "<p>Escribe a <a href=\"mailto:" + M + "\">" + M + "</a>. Solemos responder en 2 días laborables.</p>"],
           ["¿Qué datos recogéis?", "<p>No necesitas cuenta. Para los registros de compra se usa un identificador anónimo del dispositivo. Los avisos de problemas envían la viñeta, el idioma, el nivel y el ancho de pantalla; no se envían tu nombre ni tu correo. Detalles y cómo borrar tus datos: <a href=\"https://livrino.app/gizlilik\">livrino.app/gizlilik</a>.</p>"]]]] }
   };
+  /* Künye ve lisanslar (06.11.2026, denetim B1). Kaynak: model kartları; ayrıntı claude/denetim-karsilastirma.md */
+  const lic = (ad, url) => "<a href=\"" + url + "\">" + ad + "</a>";
+  const CC_BY4 = lic("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/");
+  const CC_BYSA4 = lic("CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/");
+  const CC_BY3 = lic("CC BY 3.0", "https://creativecommons.org/licenses/by/3.0/");
+  const APACHE = lic("Apache 2.0", "https://www.apache.org/licenses/LICENSE-2.0");
+  const OFL = lic("SIL OFL 1.1", "https://openfontlicense.org");
+  const MIT = lic("MIT", "https://opensource.org/license/mit");
+  const POCKET = "<a href=\"https://huggingface.co/wite-tech/pocket-tts-turkish\">Pocket TTS Turkish</a> (wite-tech; Kyutai Pocket TTS)";
+  const PIPER = "<a href=\"https://huggingface.co/rhasspy/piper-voices\">Piper</a>";
+  const sesListe = (t) => "<ul>" +
+    "<li>" + POCKET + " · " + CC_BY4 + ". " + t.pocket + "</li>" +
+    "<li>" + PIPER + " · en_GB northern_english_male: " + t.veri + " Crowdsourced UK and Ireland English Dialect speech data set (OpenSLR 83) · " + CC_BYSA4 + "</li>" +
+    "<li>" + PIPER + " · es_ES sharvard: " + t.veri + " Sharvard Corpus, University of Edinburgh · " + CC_BY3 + "</li>" +
+    "<li>" + PIPER + " · es_MX claude · " + APACHE + "</li>" +
+    "<li>" + PIPER + " · en_US john, en_US bryce, en_GB cori (" + t.km + ", LibriVox); es_ES davefx (CC0); es_MX ald (Unlicense); de_DE thorsten, thorsten_emotional (Thorsten-Voice, CC0); de_DE kerstin (CC0)</li></ul>";
+  const yazilim = "<ul><li>Bodoni Moda, Courier Prime, Kalam, Work Sans · " + OFL + "</li>" +
+    "<li>Capacitor (Ionic) · " + MIT + "</li><li>RevenueCat Purchases · " + MIT + "</li><li>fflate · " + MIT + "</li></ul>";
+  const KUNYE = {
+    tr: ["Künye ve lisanslar", {pocket: "Sesler bu modelle üretildi; hızları ayarlandı.", veri: "veri:", km: "kamu malı"}, [
+      ["Seslendirme", "<p>Balon sesleri açık lisanslı yapay ses modelleriyle üretildi. Atıf isteyen lisanslar:</p>"],
+      ["Görseller", "<p>Görseller " + lic("FLUX.1 [schnell]", "https://huggingface.co/black-forest-labs/FLUX.1-schnell") + " (Black Forest Labs, " + APACHE + ") modeliyle yapay zekâ desteğiyle üretildi ve Livrino tarafından seçilip düzenlendi.</p>"],
+      ["Yazı tipleri ve yazılım", ""],
+      ["Metinler", "<p>Uyarlanan eserlerin özgün metinleri kamu malıdır. Uyarlamalar, çeviriler ve seviyelendirilmiş metinler Livrino'ya aittir.</p>"]]],
+    en: ["Credits & licences", {pocket: "Audio was generated with this model; speed adjusted.", veri: "data:", km: "public domain"}, [
+      ["Voices", "<p>Balloon audio was generated with openly licensed speech models. Licences that require attribution:</p>"],
+      ["Illustrations", "<p>Illustrations were created with AI assistance using " + lic("FLUX.1 [schnell]", "https://huggingface.co/black-forest-labs/FLUX.1-schnell") + " (Black Forest Labs, " + APACHE + ") and selected and edited by Livrino.</p>"],
+      ["Fonts and software", ""],
+      ["Texts", "<p>The original texts of the adapted works are in the public domain. The adaptations, translations and levelled texts belong to Livrino.</p>"]]],
+    de: ["Impressum und Lizenzen", {pocket: "Die Audios wurden mit diesem Modell erzeugt; Tempo angepasst.", veri: "Daten:", km: "gemeinfrei"}, [
+      ["Stimmen", "<p>Die Audios der Sprechblasen wurden mit offen lizenzierten Sprachmodellen erzeugt. Lizenzen mit Namensnennung:</p>"],
+      ["Illustrationen", "<p>Die Illustrationen wurden KI-gestützt mit " + lic("FLUX.1 [schnell]", "https://huggingface.co/black-forest-labs/FLUX.1-schnell") + " (Black Forest Labs, " + APACHE + ") erstellt und von Livrino ausgewählt und bearbeitet.</p>"],
+      ["Schriften und Software", ""],
+      ["Texte", "<p>Die Originaltexte der adaptierten Werke sind gemeinfrei. Die Adaptionen, Übersetzungen und gestuften Texte gehören Livrino.</p>"]]],
+    es: ["Créditos y licencias", {pocket: "Los audios se generaron con este modelo; velocidad ajustada.", veri: "datos:", km: "dominio público"}, [
+      ["Voces", "<p>Los audios de los bocadillos se generaron con modelos de voz de licencia abierta. Licencias que exigen atribución:</p>"],
+      ["Ilustraciones", "<p>Las ilustraciones se crearon con ayuda de IA mediante " + lic("FLUX.1 [schnell]", "https://huggingface.co/black-forest-labs/FLUX.1-schnell") + " (Black Forest Labs, " + APACHE + ") y Livrino las seleccionó y editó.</p>"],
+      ["Fuentes y software", ""],
+      ["Textos", "<p>Los textos originales de las obras adaptadas son de dominio público. Las adaptaciones, traducciones y textos por niveles pertenecen a Livrino.</p>"]]]
+  };
+  for (const [dil, [baslik, t, maddeler]] of Object.entries(KUNYE)) {
+    maddeler[0][1] += sesListe(t);
+    maddeler[2][1] = yazilim;
+    L[dil].s.push([baslik, maddeler]);
+  }
   const DILLER = ["tr", "en", "de", "es"];
   const q = new URLSearchParams(location.search);
   let ui = q.get("ui");
