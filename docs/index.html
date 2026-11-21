@@ -32,5 +32,11 @@ a { color:var(--accent); }
   <a class="play" href="https://play.google.com/store/apps/details?id=com.livrino.app" rel="noopener"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın"></a>
   <footer><a href="gizlilik">Gizlilik · Privacy · Datenschutz · Privacidad</a> · <a href="mailto:destek@livrino.app">destek@livrino.app</a></footer>
 </main>
+<script>
+/* Instagram/TikTok uygulama içi tarayıcıları play.google.com'u açamıyor (Taner 21.11): Android'de Play Store uygulamasını doğrudan aç. */
+(function(){if(!/Android/i.test(navigator.userAgent))return;
+var u='intent://details?id=com.livrino.app#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url='+encodeURIComponent('https://play.google.com/store/apps/details?id=com.livrino.app')+';end';
+document.querySelectorAll('a[href*="play.google.com/store/apps/details?id=com.livrino.app"]').forEach(function(a){a.href=u;});})();
+</script>
 </body>
 </html>
