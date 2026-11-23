@@ -23,12 +23,20 @@ small{display:block;margin-top:18px;opacity:.8}
 <a class="btn" id="git" href="https://play.google.com/store/apps/details?id=com.livrino.app">Google Play'de aç · Open in Google Play</a>
 <small>Açılmazsa düğmeye dokunun · If nothing happens, tap the button</small>
 <script>
-/* Taner 21.11: Instagram/TikTok içi tarayıcı play.google.com'u açamıyor → Android'de Play Store uygulamasını doğrudan aç. */
+/* Taner 21.11: Instagram/TikTok içi tarayıcı play.google.com'u açamıyor → Android'de Play Store uygulamasını doğrudan aç.
+   Taner 22.11 (sosyal rapor): ?k=ig|tt|yt|... kaynağı Play referrer'ına (UTM) aktarılır; Play Console edinim raporunda kaynak görünür. */
 (function(){
-  var web='https://play.google.com/store/apps/details?id=com.livrino.app';
+  var izinli={ig:'instagram',tt:'tiktok',yt:'youtube',q:'quora',x:'x',fb:'facebook',ogr:'ogretmen',site:'site',qr:'qr'};
+  var k=(new URLSearchParams(location.search).get('k')||'').toLowerCase();
+  var kaynak=izinli[k]||'site';
+  var ref='utm_source='+kaynak+'&utm_medium='+(kaynak==='site'?'web':'social')+'&utm_campaign=organik';
+  var id='com.livrino.app';
+  var web='https://play.google.com/store/apps/details?id='+id+'&referrer='+encodeURIComponent(ref);
+  var btn=document.getElementById('git');
+  btn.href=web;
   if(!/Android/i.test(navigator.userAgent)){ location.replace(web); return; }
-  var intent='intent://details?id=com.livrino.app#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url='+encodeURIComponent(web)+';end';
-  document.getElementById('git').href=intent;
+  var intent='intent://details?id='+id+'&referrer='+encodeURIComponent(ref)+'#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url='+encodeURIComponent(web)+';end';
+  btn.href=intent;
   setTimeout(function(){ location.href=intent; }, 150);
 })();
 </script>
