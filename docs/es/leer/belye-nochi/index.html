@@ -20,54 +20,95 @@
 <meta property="og:image" content="https://livrino.app/oku/img/belye-nochi/kapak.webp">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Noches blancas", "alternateName": ["Beyaz Geceler", "Weiße Nächte", "White Nights"], "author": {"@type": "Person", "name": "Fyodor Dostoyevsky"}, "description": "En las noches blancas de San Petersburgo, un soñador solitario conoce a la joven Nástenka llorando junto a un canal. Cuatro noches de esperanza.", "inLanguage": "ru", "url": "https://livrino.app/es/leer/belye-nochi/", "genre": "Comics adaptation", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Livrino", "url": "https://livrino.app"}, "datePublished": "1848", "image": "https://livrino.app/oku/img/belye-nochi/kapak.webp"}</script>
+<!-- livrino-tema 2026-11 -->
+<link rel="preload" href="/yazitipi/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/yazitipi/sourceserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-:root{--bg:#F0E6D6;--fg:#2A1C18;--muted:#6B5A50;--accent:#7A1E24;--card:#FBF5EA;--line:#DCCDB5}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.65 Georgia,"Times New Roman",serif}
-a{color:var(--accent)}
-header.top{background:var(--accent);color:var(--bg);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-header.top a.logo{color:var(--bg);text-decoration:none;font-size:26px;letter-spacing:.04em}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-display:swap;font-weight:500 800;src:url(/yazitipi/bricolage-latin.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+2039-203A,U+20AC}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-display:swap;font-weight:500 800;src:url(/yazitipi/bricolage-tr.woff2) format("woff2");unicode-range:U+011E-011F,U+0130-0131,U+015E-015F}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-display:swap;font-weight:400 600;src:url(/yazitipi/sourceserif-latin.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+2039-203A,U+20AC}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-display:swap;font-weight:400 600;src:url(/yazitipi/sourceserif-tr.woff2) format("woff2");unicode-range:U+011E-011F,U+0130-0131,U+015E-015F}
+:root{--bordo:#6E1A21;--bordo-koyu:#4E1117;--sis:#E7E3DC;--balon:#FFFCF6;--murekkep:#1F1A1C;--soluk:#5A524D;
+--okra:#E9B44C;--altyazi:#EFE6CF;--cizgi:#CFC8BD;--accent:#6E1A21;
+--baslik:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+--govde:"Source Serif 4",Georgia,"Times New Roman",serif;--daktilo:"Courier Prime","Courier New",monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sis);color:var(--murekkep);font:400 1.125rem/1.7 var(--govde)}
+img{max-width:100%;height:auto}
+a{color:var(--bordo);text-underline-offset:.18em;text-decoration-thickness:1px}a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--bordo);outline-offset:3px;border-radius:4px}
+header.top :focus-visible,.koyu :focus-visible,footer :focus-visible{outline-color:var(--okra)}
+.atla{position:absolute;left:-999px;top:8px;background:var(--balon);color:var(--murekkep);padding:8px 14px;border-radius:8px;z-index:9}
+.atla:focus{left:8px}
+h1,h2,h3{font-family:var(--baslik);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+header.top{background:var(--bordo);color:var(--balon);display:flex;align-items:center;justify-content:space-between;gap:12px;
+min-height:60px;padding:0 max(20px,calc((100% - 1160px)/2))}
+header.top a.logo{color:var(--balon);text-decoration:none;font:400 1.75rem/1 Georgia,"Times New Roman",serif;letter-spacing:.02em}
 header.top i{font-weight:400}
-nav.dil{font:14px system-ui,sans-serif}nav.dil a{color:var(--bg);margin-left:10px;opacity:.85}nav.dil a[aria-current]{font-weight:700;opacity:1;text-decoration:none}
-main{max-width:760px;margin:0 auto;padding:24px 16px 56px}
-h1{font-size:34px;line-height:1.2;margin:.2em 0 .3em}
-h1 small{display:block;font-size:20px;font-weight:400;font-style:italic;color:var(--muted);margin-top:6px}
-.by{color:var(--muted);margin:0 0 18px;font-family:system-ui,sans-serif;font-size:15px}
-.hero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px}
-.hero img{width:210px;height:auto;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
-.hero .txt{flex:1 1 280px}
-.cta{display:block;text-align:center;background:var(--accent);color:var(--bg)!important;font:700 22px/1.3 system-ui,sans-serif;padding:20px 24px;border-radius:16px;text-decoration:none;margin:26px 0}
-.cta small{display:block;font-weight:400;font-size:15px;opacity:.9;margin-top:4px}
-h2{font-size:22px;margin:30px 0 10px;border-bottom:2px solid var(--line);padding-bottom:4px}
-figure.kare{margin:0 0 22px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-figure.kare img{display:block;width:100%;height:auto}
-figure.kare figcaption{padding:12px 16px;font-size:17px}
-.bl{margin:0 0 10px}.bl:last-child{margin-bottom:0}
-.bl b{font:700 12px system-ui,sans-serif;letter-spacing:.08em;color:var(--accent);margin-right:6px}
-.bl .ik{color:var(--muted);font-style:italic;display:block}
-.not{background:var(--card);border-left:5px solid var(--accent);padding:12px 16px;border-radius:6px;font:16px/1.5 system-ui,sans-serif}
-table.sev{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:16px}
-table.sev th,table.sev td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
-table.sev th{font:700 13px system-ui,sans-serif;color:var(--accent);white-space:nowrap}
-ul.liste{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
-ul.liste li{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-ul.liste a{display:block;text-decoration:none;color:inherit;height:100%}
-ul.liste img{display:block;width:100%;height:auto}
-ul.liste .b{padding:10px 14px 14px;font-size:16px;line-height:1.35}
-ul.liste .b strong{display:block;font-size:18px}
-ul.liste .b span{color:var(--muted);font:14px system-ui,sans-serif}
-ol.adim{padding-left:22px}ol.adim li{margin-bottom:8px}
-details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 10px}
-details summary{cursor:pointer;font-weight:700}
-.rozet img{height:72px;width:auto}
-.ust{font:600 14px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:18px 0 0}
-footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font:14px system-ui,sans-serif;color:var(--muted)}
-@media(max-width:520px){h1{font-size:28px}.hero img{width:150px}}
+nav.dil{font:600 .9375rem/1 var(--baslik)}
+nav.dil a{color:var(--balon);opacity:.8;text-decoration:none;display:inline-block;padding:10px 7px}
+nav.dil a:hover{opacity:1;text-decoration:underline}
+nav.dil a[aria-current]{opacity:1;box-shadow:inset 0 -2px 0 var(--okra)}
+footer{background:var(--bordo-koyu);color:#E6CFCB;font:400 .9375rem/1.6 var(--baslik)}
+footer .kap{max-width:1160px;margin:0 auto;padding:22px 20px 28px;display:flex;flex-wrap:wrap;gap:6px 20px}
+footer a{color:var(--balon)}
+a.cta{display:block;max-width:460px;text-align:center;background:var(--okra);color:var(--murekkep)!important;
+font:800 1.25rem/1.25 var(--baslik);padding:18px 24px;border-radius:18px;text-decoration:none;margin:28px 0}
+a.cta:hover{background:#F2C468}
+a.cta small{display:block;font:500 .9375rem/1.4 var(--baslik);margin-top:4px}
+.rozet{display:inline-block;border-radius:12px}.rozet img{height:64px;width:auto;display:block}
+details{border-bottom:1px solid var(--cizgi)}
+details:first-of-type{border-top:2px solid var(--murekkep)}
+details summary{cursor:pointer;list-style:none;padding:18px 36px 18px 0;position:relative;font:700 1.1875rem/1.35 var(--baslik)}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;border-right:2px solid currentColor;
+border-bottom:2px solid currentColor;transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+details>p,details>ul,details>ol{margin:0 0 18px}
+ul.liste{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:22px 16px}
+ul.liste a{display:block;color:inherit;text-decoration:none}
+ul.liste img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;
+box-shadow:0 1px 0 rgba(0,0,0,.08),0 10px 24px -14px rgba(60,20,20,.55)}
+ul.liste .b{padding-top:10px;font:400 .9375rem/1.35 var(--baslik);color:var(--soluk)}
+ul.liste .yer{display:flex;align-items:flex-end;aspect-ratio:4/5;border-radius:4px;padding:14px;background:var(--bordo);
+color:var(--balon);font:400 1.375rem/1.15 Georgia,"Times New Roman",serif}
+ul.liste .b strong{display:block;font:700 1.0625rem/1.25 var(--baslik);color:var(--murekkep);letter-spacing:-.01em;margin-bottom:2px}
+ul.liste a:hover strong{text-decoration:underline}
+ul.liste .b span[lang]{color:var(--murekkep)}
+@media (min-width:720px){ul.liste{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:980px){ul.liste{grid-template-columns:repeat(6,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+main{max-width:800px;margin:0 auto;padding:36px 20px 64px}
+main p,main li{max-width:66ch}
+h1{font-size:clamp(2rem,1.4rem + 2.6vw,3rem);margin:.1em 0 .4em}
+h1 small{display:block;font:italic 400 1.25rem/1.4 var(--govde);letter-spacing:0;color:var(--soluk);margin-top:8px}
+h2{font-size:clamp(1.5rem,1.2rem + 1.2vw,2rem);margin:48px 0 14px}
+.by{color:var(--soluk);margin:0 0 18px;font:500 1rem/1.5 var(--baslik)}
+.hero{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;margin:8px 0 18px}
+.hero img{width:200px;height:auto;border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.08),0 14px 30px -16px rgba(60,20,20,.6)}
+.hero .txt{flex:1 1 280px}.hero .txt p:first-child{font-size:1.25rem;line-height:1.55}
+figure.kare{margin:0 0 26px;background:var(--balon);border:1px solid var(--cizgi);border-radius:6px;overflow:hidden}
+figure.kare>img{display:block;width:100%;height:auto}
+figure.kare figcaption{padding:14px 18px;font-size:1.0625rem}
+.bl{margin:0 0 12px}.bl:last-child{margin-bottom:0}
+.bl b{font:700 .75rem/1 var(--baslik);letter-spacing:.04em;color:var(--bordo);margin-right:8px}
+.bl .ik{color:var(--soluk);display:block;font-size:.9375rem;margin-top:3px}
+.not{background:var(--balon);border-left:4px solid var(--bordo);padding:14px 18px;border-radius:4px;font:1rem/1.55 var(--baslik)}
+table.sev{width:100%;border-collapse:collapse;font-size:1.0625rem;border-top:2px solid var(--murekkep)}
+table.sev th,table.sev td{text-align:left;vertical-align:top;padding:11px 12px 11px 0;border-bottom:1px solid var(--cizgi)}
+table.sev th{font:700 .875rem/1.5 var(--baslik);color:var(--bordo);white-space:nowrap;padding-right:16px}
+ol.adim{padding-left:22px}ol.adim li{margin-bottom:10px}
+.ust{font:600 .9375rem/1.4 var(--baslik);color:var(--bordo);margin:22px 0 6px}
+main>ul:not(.liste){padding-left:1.2em}
+@media(max-width:520px){table.sev th{white-space:normal}.hero img{width:150px}}
+
 </style>
 </head>
 <body>
+<a class="atla" href="#icerik">Ir al contenido</a>
 <header class="top"><a class="logo" href="/es/">Livr<i>ino</i></a><nav class="dil" aria-label="Idioma"><a href="/oku/belye-nochi/" hreflang="tr" lang="tr">TR</a><a href="/en/read/belye-nochi/" hreflang="en" lang="en">EN</a><a href="/de/lesen/belye-nochi/" hreflang="de" lang="de">DE</a><a href="/es/leer/belye-nochi/" hreflang="es" lang="es" aria-current="page">ES</a></nav></header>
-<main>
+<main id="icerik">
 <h1>Noches blancas</h1>
 <p class="by">Fyodor Dostoyevsky (1821–1881) · 1848 · 6 episodios</p>
 <div class="hero">
@@ -122,7 +163,7 @@ footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font:14px system-ui,san
 <h2>Sobre el autor: Fyodor Dostoyevsky</h2>
 <p>Fiódor Dostoievski (1821–1881) fue un novelista ruso, autor de Crimen y castigo y Los hermanos Karamázov, que exploró los rincones más hondos del alma.</p>
 </main>
-<footer><a href="/es/leer/">Libros</a> · <a href="/es/ayuda/">Ayuda</a> · <a href="/gizlilik">Privacidad</a> · <a href="/kosullar">Condiciones</a> · <a href="mailto:destek@livrino.app">destek@livrino.app</a></footer>
+<footer><div class="kap"><a href="/es/leer/">Libros</a><a href="/es/ayuda/">Ayuda</a><a href="/gizlilik">Privacidad</a><a href="/gizlilik#eliminar">Eliminar tus datos</a><a href="/kosullar">Condiciones</a><a href="mailto:destek@livrino.app">destek@livrino.app</a></div></footer>
 <script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='intent://details?id=com.livrino.app#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url='+encodeURIComponent('https://play.google.com/store/apps/details?id=com.livrino.app')+';end';document.querySelectorAll('a.cta,a.rozet').forEach(function(a){a.href=u;});})();</script>
 </body>
 </html>
