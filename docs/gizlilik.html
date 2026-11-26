@@ -6,24 +6,38 @@
 <title>Livrino · Gizlilik · Privacy · Datenschutz · Privacidad</title>
 <meta name="description" content="Livrino gizlilik politikası: hangi bilgiler cihazda kalır, neler gönderilir, satın almalar ve verilerinizin silinmesi. Privacy policy in TR, EN, DE, ES.">
 <link rel="canonical" href="https://livrino.app/gizlilik">
+<!-- livrino-tema 2026-11 -->
+<link rel="preload" href="/yazitipi/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/yazitipi/sourceserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-:root { --bg:#E6E7E2; --surface:#F3F3EF; --fg:#1C2024; --muted:#5A6066; --line:#C4C6BF; --accent:#8C2F39; }
-@media (prefers-color-scheme: dark) { :root { --bg:#14171A; --surface:#1D2125; --fg:#E5E3DC; --muted:#9AA0A6; --line:#2E3338; --accent:#D9737B; } }
-* { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 Georgia, "Times New Roman", serif; }
-.wrap { max-width:720px; margin:0 auto; padding:32px 16px 64px; }
-header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-.mark { margin:0; font-size:34px; font-weight:700; letter-spacing:.01em; }
-.mark i { color:var(--accent); font-weight:400; }
-nav a { font:600 13px/1 system-ui, sans-serif; color:var(--fg); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:6px 12px; margin-left:4px; }
-nav a[aria-current="true"] { background:var(--fg); color:var(--bg); }
-article { background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:24px 22px; margin-top:24px; }
-h1 { font-size:26px; margin:0 0 4px; }
-h2 { font:700 15px/1.3 system-ui, sans-serif; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); margin:28px 0 8px; }
-.date { color:var(--muted); font:14px system-ui, sans-serif; margin:0 0 16px; }
-ul { padding-left:20px; }
-a { color:var(--accent); }
-[hidden] { display:none !important; }
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-display:swap;font-weight:500 800;src:url(/yazitipi/bricolage-latin.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+2039-203A,U+20AC}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-display:swap;font-weight:500 800;src:url(/yazitipi/bricolage-tr.woff2) format("woff2");unicode-range:U+011E-011F,U+0130-0131,U+015E-015F}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-display:swap;font-weight:400 600;src:url(/yazitipi/sourceserif-latin.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+2039-203A,U+20AC}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-display:swap;font-weight:400 600;src:url(/yazitipi/sourceserif-tr.woff2) format("woff2");unicode-range:U+011E-011F,U+0130-0131,U+015E-015F}
+:root{--bordo:#6E1A21;--bordo-koyu:#4E1117;--sis:#E7E3DC;--balon:#FFFCF6;--murekkep:#1F1A1C;--soluk:#5A524D;
+--okra:#E9B44C;--altyazi:#EFE6CF;--cizgi:#CFC8BD;--accent:#6E1A21;
+--baslik:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+--govde:"Source Serif 4",Georgia,"Times New Roman",serif;--daktilo:"Courier Prime","Courier New",monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sis);color:var(--murekkep);font:400 1.0625rem/1.7 var(--govde)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--bordo);
+padding:14px 0;box-shadow:0 0 0 100vmax var(--bordo);clip-path:inset(0 -100vmax)}
+.mark{margin:0;font:400 1.75rem/1 Georgia,"Times New Roman",serif;color:var(--balon);letter-spacing:.02em}
+.mark i{font-weight:400}
+nav a{font:600 .9375rem/1 var(--baslik);color:var(--balon);opacity:.8;text-decoration:none;display:inline-block;padding:10px 7px}
+nav a:hover{opacity:1;text-decoration:underline}
+nav a[aria-current="true"]{opacity:1;box-shadow:inset 0 -2px 0 var(--okra)}
+article{margin-top:36px}
+h1{font:800 clamp(2rem,1.5rem + 2vw,2.75rem)/1.1 var(--baslik);letter-spacing:-.02em;margin:0 0 6px}
+h2{font:700 1.375rem/1.3 var(--baslik);letter-spacing:-.01em;margin:36px 0 8px}
+.date{color:var(--soluk);font:500 .9375rem/1.4 var(--baslik);margin:0 0 20px}
+p,li{max-width:66ch}ul{padding-left:20px}
+a{color:var(--bordo);text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--bordo);outline-offset:3px;border-radius:4px}
+header :focus-visible{outline-color:var(--okra)}
+[hidden]{display:none!important}
+
 </style>
 </head>
 <body>
